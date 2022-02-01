@@ -75,13 +75,19 @@ Done.
 make[1]: Leaving directory `/gpfs/gsfs8/users/swihartbj/R_valgrind_level_2/R-4.1.2'
 ````
  * `unix>` `make check`
- * you'll see `Testing examples for package 'base'` and this takes a while
- * cd into bin and see if you have R.  You need an interactive node to launch it, so don't do anything here/now
+ * you'll see `Testing examples for package 'base'` and this takes a while.
+ * `unix>` `cd bin` cd into bin and see if you have R.  You need an interactive node to launch it, so don't do anything here/now
 
 ## 3. Use your creation, CreatoR!
- * sinteractive
+ * `unix >` `sinteractive`
  * cd into `bin` folder
- * R -d "valgrind --tool=memcheck --leak-check=full --track-origins=yes" --vanilla` 
+ * `R -d "valgrind --tool=memcheck --leak-check=full --track-origins=yes" --vanilla`
+ * should see this header (valgrind R session):
+
+````
+
+````
+
  * run your code interactively
 
 
