@@ -344,6 +344,9 @@ The following objects are masked from ‘package:base’:
 +               pshape=3.44, pmix=2.3)
 
 ````
+
+gnlmix successfully ran, so I typed q("no") and a bunch of messages from valgrind flooded the screen and made me worried.  so I reran below -- but take heart -- if the errors were within gnlmix they would have appeared during its execution.  I think we have the valgrind issue solved for repeated!
+
 ---
 
 ## 2nd go around 
