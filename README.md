@@ -62,7 +62,28 @@ R is now configured for x86_64-pc-linux-gnu
 ````
   * `unix>` `make`
   * lots of stuff flies by.  sort of looks like when packages are compiling when you cmd+shft+B in Rstudio on your local macbook
-  * 
+  * Now I see this:
+
+````
+JAVA_HOME        : /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.322.b06-1.el7_9.x86_64/jre
+Java library path: $(JAVA_HOME)/lib/amd64/server
+JNI cpp flags    : -I$(JAVA_HOME)/../include -I$(JAVA_HOME)/../include/linux
+JNI linker flags : -L$(JAVA_HOME)/lib/amd64/server -ljvm
+Updating Java configuration in /data/swihartbj/R_valgrind_level_2/R-4.1.2
+Done.
+
+make[1]: Leaving directory `/gpfs/gsfs8/users/swihartbj/R_valgrind_level_2/R-4.1.2'
+````
+ * `unix>` `make check`
+ * you'll see `Testing examples for package 'base'` and this takes a while
+ * cd into bin and see if you have R.  You need an interactive node to launch it, so don't do anything here/now
+
+## 3. Use your creation, CreatoR!
+ * sinteractive
+ * cd into `bin` folder
+ * R -d "valgrind --tool=memcheck --leak-check=full --track-origins=yes" --vanilla` 
+ * run your code interactively
+
 
 ---
 
