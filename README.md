@@ -13,7 +13,7 @@ And an old note about valgrind at the time of R configuration:
   * [Lumley's 2005 note](https://developer.r-project.org/valgrind-internal.html)
 
 
-These notes are personal.  They may not generalize to you.  I've benefited greatly from others posting online how they tried to tackle things.  This is my contribution, with no guarantees!
+These notes below are minimal, stream-of-consciousness, and semi-personal.  They may not generalize to you.  I've benefited greatly from others posting online how they tried to tackle things, without trying to make it a catch-all tutorial.  This is my contribution in this vein, with no guarantees!
 
 ---
 
