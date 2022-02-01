@@ -67,9 +67,9 @@ R is now configured for x86_64-pc-linux-gnu
 ---
 
 ## Stray Observations
-  * seems I needed LIBnn=lib for the configure step
+  * seems I needed `LIBnn=lib` for the configure step
   * seems like I need only one dash for the configure options involving valgrind
-  * ./configure would run but error "configure: error: PCRE2 library and headers are required, or use --with-pcre1 and PCRE >= 8.32 with UTF-8 support" which google led me to [SO](https://unix.stackexchange.com/a/653785/117378). The following *did* *not* work.  However, adding option `-with-pcre1` did!
+  * `./configure` would run but error "configure: error: PCRE2 library and headers are required, or use --with-pcre1 and PCRE >= 8.32 with UTF-8 support" which google led me to [SO](https://unix.stackexchange.com/a/653785/117378). The following *did* *not* work.  However, adding option `-with-pcre1` did work!
 
 ```
  wget https://ftp.pcre.org/pub/pcre/pcre2-10.37.tar.gz
