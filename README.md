@@ -82,10 +82,17 @@ make[1]: Leaving directory `/gpfs/gsfs8/users/swihartbj/R_valgrind_level_2/R-4.1
  * `unix >` `sinteractive`
  * cd into `bin` folder
  * `./R -d "valgrind --tool=memcheck --leak-check=full --track-origins=yes" --vanilla`
- * should see this header (valgrind R session):
+ * should see something like this header (valgrind R session):
 
 ````
+[swihartbj@cn0876 /data/swihartbj/R_valgrind_level_2/R-4.1.2/bin 3]./R -d "valgrind --tool=memcheck --leak-check=full --track-origins=yes" --vanilla
+==45366== Memcheck, a memory error detector
+==45366== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==45366== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==45366== Command: /data/swihartbj/R_valgrind_level_2/R-4.1.2/bin/exec/R --vanilla
+==45366==
 
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
 ````
 
  * run your code interactively
