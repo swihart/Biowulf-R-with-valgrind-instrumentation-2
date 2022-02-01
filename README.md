@@ -30,10 +30,37 @@ These notes are personal.  They may not generalize to you.  I've benefited great
 ## 2. Configure and Make and Check
 
   * cd into the folder
-  * `./configure LIBnn=lib -with-valgrind-instrumentation=2 -with-system-valgrind-headers`
   * ./configure LIBnn=lib -with-pcre1 -with-valgrind-instrumentation=2 -with-system-valgrind-headers
-  * lots of `checking for...` etc will whiz by. Just wait. 
-  * `make check`
+  * lots of `checking for...` etc will whiz by. Just wait. Should end with something like
+
+````
+R is now configured for x86_64-pc-linux-gnu
+
+  Source directory:            .
+  Installation directory:      /usr/local
+
+  C compiler:                  gcc -std=gnu11  -g -O2
+  Fortran fixed-form compiler: gfortran  -g -O2
+
+  Default C++ compiler:        g++ -std=gnu++11  -g -O2
+  C++11 compiler:              g++ -std=gnu++11  -g -O2
+  C++14 compiler:
+  C++17 compiler:
+  C++20 compiler:
+  Fortran free-form compiler:  gfortran  -g -O2
+  Obj-C compiler:
+
+  Interfaces supported:        X11
+  External libraries:          pcre1, readline, curl
+  Additional capabilities:     PNG, JPEG, TIFF, NLS, cairo, ICU
+  Options enabled:             shared BLAS, R profiling
+
+  Capabilities skipped:
+  Options not enabled:         memory profiling
+
+  Recommended packages:        yes
+````
+  * `make`
 
 ---
 
