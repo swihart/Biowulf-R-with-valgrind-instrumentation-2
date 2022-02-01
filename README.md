@@ -30,7 +30,7 @@ These notes are personal.  They may not generalize to you.  I've benefited great
 ## 2. Configure and Make and Check
 
   * cd into the folder
-  * ./configure LIBnn=lib -with-pcre1 -with-valgrind-instrumentation=2 -with-system-valgrind-headers
+  * `unix> ./configure LIBnn=lib -with-pcre1 -with-valgrind-instrumentation=2 -with-system-valgrind-headers`
   * lots of `checking for...` etc will whiz by. Just wait. Should end with something like
 
 ````
@@ -60,7 +60,7 @@ R is now configured for x86_64-pc-linux-gnu
 
   Recommended packages:        yes
 ````
-  * `make`
+  * `unix> make`
 
 ---
 
