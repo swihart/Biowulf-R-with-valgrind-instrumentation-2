@@ -31,7 +31,7 @@ These notes are personal.  They may not generalize to you.  I've benefited great
 
   * cd into the folder
   * `./configure LIBnn=lib -with-valgrind-instrumentation=2 -with-system-valgrind-headers`
-  * ./configure LIBnn=lib -enable-utf -enable-unicode-properties -enable-jit -disable-cpp -with-valgrind-instrumentation=2 -with-system-valgrind-headers
+  * ./configure LIBnn=lib -with-pcre1 -with-valgrind-instrumentation=2 -with-system-valgrind-headers
   * lots of `checking for...` etc will whiz by. Just wait. 
   * `make check`
 
@@ -40,7 +40,7 @@ These notes are personal.  They may not generalize to you.  I've benefited great
 ## Stray Observations
   * seems I needed LIBnn=lib for the configure step
   * seems like I need only one dash for the configure options involving valgrind
-  * ./configure would run but error "configure: error: PCRE2 library and headers are required, or use --with-pcre1 and PCRE >= 8.32 with UTF-8 support" which google led me to [SO](https://unix.stackexchange.com/a/653785/117378).
+  * ./configure would run but error "configure: error: PCRE2 library and headers are required, or use --with-pcre1 and PCRE >= 8.32 with UTF-8 support" which google led me to [SO](https://unix.stackexchange.com/a/653785/117378). The following *did* *not* work.  However, adding option `-with-pcre1` did!
 
 ```
  wget https://ftp.pcre.org/pub/pcre/pcre2-10.37.tar.gz
