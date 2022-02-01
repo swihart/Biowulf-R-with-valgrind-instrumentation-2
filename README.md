@@ -344,3 +344,327 @@ The following objects are masked from ‘package:base’:
 +               pshape=3.44, pmix=2.3)
 
 ````
+---
+
+## 2nd go around 
+
+````
+[swihartbj@cn0876 /data/swihartbj/R_valgrind_level_2/R-4.1.2/bin 4]./R -d "valgrind --tool=memcheck --leak-check=full --track-origins=yes --show-leak-kinds=all -v" --vanilla
+==57107== Memcheck, a memory error detector
+==57107== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==57107== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==57107== Command: /data/swihartbj/R_valgrind_level_2/R-4.1.2/bin/exec/R --vanilla
+==57107==
+--57107-- Valgrind options:
+--57107--    --tool=memcheck
+--57107--    --leak-check=full
+--57107--    --track-origins=yes
+--57107--    --show-leak-kinds=all
+--57107--    -v
+--57107-- Contents of /proc/version:
+--57107--   Linux version 3.10.0-862.14.4.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-28) (GCC) ) #1 SMP Wed Sep 26 15:12:11 UTC 2018
+--57107--
+--57107-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--57107-- Page sizes: currently 4096, max supported 4096
+--57107-- Valgrind library directory: /usr/lib64/valgrind
+--57107-- Reading syms from /gpfs/gsfs8/users/swihartbj/R_valgrind_level_2/R-4.1.2/bin/exec/R
+--57107-- Reading syms from /usr/lib64/ld-2.17.so
+--57107-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--57107--    object doesn't have a symbol table
+--57107--    object doesn't have a dynamic symbol table
+--57107-- Scheduler: using generic scheduler lock implementation.
+--57107-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==57107== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-57107-by-swihartbj-on-biowulf.nih.gov
+==57107== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-57107-by-swihartbj-on-biowulf.nih.gov
+==57107== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-57107-by-swihartbj-on-biowulf.nih.gov
+==57107==
+==57107== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==57107== don't want to do, unless you know exactly what you're doing,
+==57107== or are doing some strange experiment):
+==57107==   /usr/lib64/valgrind/../../bin/vgdb --pid=57107 ...command...
+==57107==
+==57107== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==57107==   /path/to/gdb /data/swihartbj/R_valgrind_level_2/R-4.1.2/bin/exec/R
+==57107== and then give GDB the following command
+==57107==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=57107
+==57107== --pid is optional if only one valgrind process is running
+==57107==
+--57107-- REDIR: 0x4019f70 (ld-linux-x86-64.so.2:strlen) redirected to 0x58059d91 (???)
+--57107-- REDIR: 0x4019d40 (ld-linux-x86-64.so.2:index) redirected to 0x58059dab (???)
+--57107-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--57107-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+==57107== WARNING: new redirection conflicts with existing -- ignoring it
+--57107--     old: 0x04019f70 (strlen              ) R-> (0000.0) 0x58059d91 ???
+--57107--     new: 0x04019f70 (strlen              ) R-> (2007.0) 0x04c2cad0 strlen
+--57107-- REDIR: 0x4019ef0 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c2dc20 (strcmp)
+--57107-- REDIR: 0x401aae0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c30ca0 (mempcpy)
+--57107-- Reading syms from /gpfs/gsfs8/users/swihartbj/R_valgrind_level_2/R-4.1.2/lib/libRblas.so
+--57107-- Reading syms from /usr/lib64/libgfortran.so.3.0.0
+--57107--    object doesn't have a symbol table
+--57107-- Reading syms from /usr/lib64/libm-2.17.so
+--57107-- Reading syms from /usr/lib64/libquadmath.so.0.0.0
+--57107--    object doesn't have a symbol table
+--57107-- Reading syms from /usr/lib64/libreadline.so.6.2
+--57107--    object doesn't have a symbol table
+--57107-- Reading syms from /usr/lib64/libpcre.so.1.2.0
+--57107--    object doesn't have a symbol table
+--57107-- Reading syms from /usr/lib64/liblzma.so.5.2.2
+--57107--    object doesn't have a symbol table
+--57107-- Reading syms from /usr/lib64/libbz2.so.1.0.6
+--57107--    object doesn't have a symbol table
+--57107-- Reading syms from /usr/lib64/libz.so.1.2.7
+--57107--    object doesn't have a symbol table
+--57107-- Reading syms from /usr/lib64/librt-2.17.so
+--57107-- Reading syms from /usr/lib64/libdl-2.17.so
+--57107-- Reading syms from /usr/lib64/libicuuc.so.50.1.2
+--57107--    object doesn't have a symbol table
+--57107-- Reading syms from /usr/lib64/libicui18n.so.50.1.2
+--57107--    object doesn't have a symbol table
+--57107-- Reading syms from /usr/lib64/libgomp.so.1.0.0
+--57107--    object doesn't have a symbol table
+--57107-- Reading syms from /usr/lib64/libpthread-2.17.so
+--57107-- Reading syms from /usr/lib64/libc-2.17.so
+--57107-- Reading syms from /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+--57107--    object doesn't have a symbol table
+--57107-- Reading syms from /usr/lib64/libtinfo.so.5.9
+--57107--    object doesn't have a symbol table
+--57107-- Reading syms from /usr/lib64/libicudata.so.50.1.2
+--57107--    object doesn't have a symbol table
+--57107-- Reading syms from /usr/lib64/libstdc++.so.6.0.19
+--57107--    object doesn't have a symbol table
+--57107-- REDIR: 0x740ce40 (libc.so.6:strcasecmp) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x7409bc0 (libc.so.6:strnlen) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x740f110 (libc.so.6:strncasecmp) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x740c620 (libc.so.6:memset) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x740c5d0 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x7409ae0 (libc.so.6:__GI_strlen) redirected to 0x4c2ca30 (__GI_strlen)
+--57107-- REDIR: 0x7409ce0 (libc.so.6:__GI_strncmp) redirected to 0x4c2d260 (__GI_strncmp)
+--57107-- REDIR: 0x740b5b0 (libc.so.6:__GI_strrchr) redirected to 0x4c2c490 (__GI_strrchr)
+--57107-- REDIR: 0x7402800 (libc.so.6:malloc) redirected to 0x4c29b9c (malloc)
+--57107-- REDIR: 0x740c440 (libc.so.6:__GI_memmove) redirected to 0x4c30210 (__GI_memmove)
+--57107-- REDIR: 0x7402c20 (libc.so.6:free) redirected to 0x4c2ac96 (free)
+--57107-- REDIR: 0x740c680 (libc.so.6:__GI_memset) redirected to 0x4c2fec0 (memset)
+--57107-- REDIR: 0x7403210 (libc.so.6:calloc) redirected to 0x4c2b91f (calloc)
+--57107-- REDIR: 0x7411850 (libc.so.6:__GI_memcpy) redirected to 0x4c2e5c0 (__GI_memcpy)
+--57107-- REDIR: 0x7409a90 (libc.so.6:strlen) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x74c3670 (libc.so.6:__strlen_sse42) redirected to 0x4c2ca90 (__strlen_sse42)
+--57107-- REDIR: 0x74117e0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x74c9480 (libc.so.6:__memcpy_ssse3) redirected to 0x4c2dfe0 (memcpy@@GLIBC_2.14)
+--57107-- REDIR: 0x7422630 (libc.so.6:__GI_strstr) redirected to 0x4c30f30 (__strstr_sse2)
+--57107-- REDIR: 0x7408080 (libc.so.6:__GI_strcmp) redirected to 0x4c2db30 (__GI_strcmp)
+--57107-- REDIR: 0x740bcb0 (libc.so.6:memchr) redirected to 0x4c2dcc0 (memchr)
+--57107-- REDIR: 0x7407fc0 (libc.so.6:__GI_strchr) redirected to 0x4c2c5c0 (__GI_strchr)
+--57107-- REDIR: 0x74130d0 (libc.so.6:strchrnul) redirected to 0x4c307c0 (strchrnul)
+--57107-- REDIR: 0x740c7f0 (libc.so.6:__GI_mempcpy) redirected to 0x4c309d0 (__GI_mempcpy)
+--57107-- REDIR: 0x740cce0 (libc.so.6:__GI_stpcpy) redirected to 0x4c2f910 (__GI_stpcpy)
+--57107-- REDIR: 0x7407f80 (libc.so.6:index) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x74bb640 (libc.so.6:__strchr_sse42) redirected to 0x4c2c680 (index)
+--57107-- REDIR: 0x7409c60 (libc.so.6:strncat) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x741d6a0 (libc.so.6:__strncat_ssse3) redirected to 0x4c2c8a0 (strncat)
+--57107-- REDIR: 0x740b530 (libc.so.6:strncpy) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x74df2b0 (libc.so.6:__strncpy_ssse3) redirected to 0x4c2ccb0 (strncpy)
+--57107-- REDIR: 0x73b67e0 (libc.so.6:setenv) redirected to 0x4c315d0 (setenv)
+--57107-- REDIR: 0x7402d00 (libc.so.6:realloc) redirected to 0x4c2baee (realloc)
+--57107-- REDIR: 0x74094d0 (libc.so.6:strcpy) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x74ddb00 (libc.so.6:__strcpy_ssse3) redirected to 0x4c2caf0 (strcpy)
+--57107-- REDIR: 0x740c040 (libc.so.6:__GI_memcmp) redirected to 0x4c2f510 (__GI_memcmp)
+--57107-- REDIR: 0xffffffffff600000 (???:???) redirected to 0x58059d73 (???)
+--57107-- REDIR: 0x7408040 (libc.so.6:strcmp) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x74bb6f0 (libc.so.6:__strcmp_sse42) redirected to 0x4c2dbd0 (__strcmp_sse42)
+--57107-- REDIR: 0x740c000 (libc.so.6:bcmp) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x74e6910 (libc.so.6:__memcmp_sse4_1) redirected to 0x4c2f650 (__memcmp_sse4_1)
+--57107-- REDIR: 0x74c5100 (libc.so.6:__strncasecmp_avx) redirected to 0x4c2d490 (strncasecmp)
+--57107-- REDIR: 0x7409ca0 (libc.so.6:strncmp) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x74bc4a0 (libc.so.6:__strncmp_sse42) redirected to 0x4c2d340 (__strncmp_sse42)
+--57107-- REDIR: 0x7422bf0 (libc.so.6:strstr) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x74bd620 (libc.so.6:__strstr_sse42) redirected to 0x4c30fc0 (__strstr_sse42)
+--57107-- REDIR: 0x740b570 (libc.so.6:rindex) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x74bd480 (libc.so.6:__strrchr_sse42) redirected to 0x4c2c520 (__strrchr_sse42)
+--57107-- REDIR: 0x7407d80 (libc.so.6:strcat) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x741ba90 (libc.so.6:__strcat_ssse3) redirected to 0x4c2c6c0 (strcat)
+--57107-- REDIR: 0x74095f0 (libc.so.6:strcspn) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x74c3710 (libc.so.6:__strcspn_sse42) redirected to 0x4c310b0 (strcspn)
+--57107-- REDIR: 0x74ce820 (libc.so.6:__memmove_ssse3) redirected to 0x4c2dd80 (memcpy@GLIBC_2.2.5)
+--57107-- Reading syms from /gpfs/gsfs8/users/swihartbj/R_valgrind_level_2/R-4.1.2/library/methods/libs/methods.so
+--57107-- REDIR: 0x73b6840 (libc.so.6:unsetenv) redirected to 0x4c31530 (unsetenv)
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+--57107-- REDIR: 0x7409bf0 (libc.so.6:__GI_strnlen) redirected to 0x4c2c9e0 (__GI_strnlen)
+--57107-- REDIR: 0x7409510 (libc.so.6:__GI_strcpy) redirected to 0x4c2cbd0 (__GI_strcpy)
+--57107-- REDIR: 0x740cea0 (libc.so.6:__GI___strcasecmp_l) redirected to 0x4c2d750 (__GI___strcasecmp_l)
+--57107-- REDIR: 0x7412ec0 (libc.so.6:__GI___rawmemchr) redirected to 0x4c30820 (__GI___rawmemchr)
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+--57107-- Reading syms from /usr/lib64/gconv/ISO8859-1.so
+--57107-- REDIR: 0x401ac30 (ld-linux-x86-64.so.2:stpcpy) redirected to 0x4c2fc90 (stpcpy)
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+--57107-- Reading syms from /gpfs/gsfs8/users/swihartbj/R_valgrind_level_2/R-4.1.2/library/utils/libs/utils.so
+--57107-- Reading syms from /gpfs/gsfs8/users/swihartbj/R_valgrind_level_2/R-4.1.2/library/grDevices/libs/grDevices.so
+--57107-- REDIR: 0x740cca0 (libc.so.6:stpcpy) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x74e1e30 (libc.so.6:__stpcpy_ssse3) redirected to 0x4c2f830 (stpcpy)
+--57107-- Reading syms from /gpfs/gsfs8/users/swihartbj/R_valgrind_level_2/R-4.1.2/library/graphics/libs/graphics.so
+--57107-- Reading syms from /gpfs/gsfs8/users/swihartbj/R_valgrind_level_2/R-4.1.2/library/stats/libs/stats.so
+--57107-- Reading syms from /gpfs/gsfs8/users/swihartbj/R_valgrind_level_2/R-4.1.2/lib/libRlapack.so
+--57107-- REDIR: 0xffffffffff600400 (???:???) redirected to 0x58059d7d (???)
+--57107-- REDIR: 0x74c3a90 (libc.so.6:__strcasecmp_avx) redirected to 0x4c2d3b0 (strcasecmp)
+> --57107-- REDIR: 0x7492360 (libc.so.6:__memcpy_chk) redirected to 0x4a247b0 (_vgnU_ifunc_wrapper)
+--57107-- REDIR: 0x74c9470 (libc.so.6:__memcpy_chk_ssse3) redirected to 0x4c30d90 (__memcpy_chk)
+library(repeated)
+Loading required package: rmutil
+--57107-- Reading syms from /gpfs/gsfs8/users/swihartbj/R_valgrind_level_2/R-4.1.2/library/rmutil/libs/rmutil.so
+
+Attaching package: ‘rmutil’
+
+The following object is masked from ‘package:stats’:
+
+    nobs
+
+The following objects are masked from ‘package:base’:
+
+    as.data.frame, units
+
+--57107-- Reading syms from /gpfs/gsfs8/users/swihartbj/R_valgrind_level_2/R-4.1.2/library/repeated/libs/repeated.so
+> library(repeated)
+>
+> dose <- c(9,12,4,9,11,10,2,11,12,9,9,9,4,9,11,9,14,7,9,8)
+> y <- c(8.674419, 11.506066, 11.386742, 27.414532, 12.135699,  4.359469,
++        1.900681, 17.425948,  4.503345,  2.691792,  5.731100, 10.534971,
++        11.220260,  6.968932,  4.094357, 16.393806, 14.656584,  8.786133,
++        20.972267, 17.178012)
+> id <- rep(1:4, each=5)
+>
+>
+> beg.jim <- Sys.time()
+> jim <- gnlmix(y, mu=~a+b*dose+rand, random="rand", nest=id, pmu=c(a=8.7,b=0.25),
++               pshape=3.44, pmix=2.3)
+--57107-- Reading syms from /gpfs/gsfs8/users/swihartbj/R_valgrind_level_2/R-4.1.2/modules/lapack.so
+> end.jim <- Sys.time()
+> time.jim <- end.jim - beg.jim
+> time.jim
+Time difference of 1.167166 mins
+> resp <- restovec(matrix(y, nrow=4, byrow=TRUE), name="y")
+> reps <- rmna(resp, tvcov=tvctomat(matrix(dose, nrow=4, byrow=TRUE), name="dose"))
+> glmm(y~dose, nest=individuals, data=reps)
+
+Call:  glmm(y ~ dose, nest = individuals, data = reps)
+
+Coefficients:
+(Intercept)         dose           sd
+     8.7102       0.2491       3.0862
+
+Degrees of Freedom: 18 Total (i.e. Null);  16 Residual
+Null Deviance:	    131.3
+Residual Deviance: 129.3 	AIC: 137.3
+> gnlmm(reps, mu=~dose, pmu=c(8.7,0.25), psh=3.5, psd=3)
+
+Call:
+gnlmm(reps, mu = ~dose, pmu = c(8.7, 0.25), psh = 3.5, psd = 3)
+
+normal distribution
+
+ with normal mixing distribution on identity scale
+ (10 point Gauss-Hermite integration)
+
+Response: y
+
+Log likelihood function:
+{
+    t <- sh1(p)
+    wt * (t + (y - mu4(p))^2/exp(t))/2
+}
+
+Location function:
+~dose
+
+Log shape function:
+structure(p[1] * rep(1, n)), srcfile = <environment>, wholeSrcref = structure(c(1L,
+0L, 2L, 0L, 0L, 0L, 1L, 2L), srcfile = <environment>, class = "srcref")
+
+-Log likelihood    64.65019
+Degrees of freedom 16
+AIC                68.65019
+Iterations         18
+
+Location parameters:
+             estimate      se
+(Intercept)    8.7106  4.4459
+dose           0.2491  0.4467
+
+Mixing standard deviation:
+   estimate     se
+      3.088  1.838
+
+Shape parameters:
+      estimate      se
+p[1]     3.442  0.3532
+
+Correlations:
+         1        2        3        4
+1  1.00000 -0.89424  0.08947 -0.04067
+2 -0.89424  1.00000 -0.09830  0.04489
+3  0.08947 -0.09830  1.00000 -0.18945
+4 -0.04067  0.04489 -0.18945  1.00000
+> gnlmix(reps, mu=~a+b*dose+rand, random="rand", pmu=c(8.7,0.25),pshape=3.44, pmix=2.3)
+
+Call:
+gnlmix(reps, mu = ~a + b * dose + rand, random = "rand", pmu = c(8.7,
+    0.25), pshape = 3.44, pmix = 2.3)
+
+normal distribution
+
+normal mixing distribution
+
+Response:
+
+Log likelihood function:
+{
+    fn <- function(r) mix(p[np], r) * capply(fcn(p, r[nest]) *
+        delta^cc, nest, prod)
+    -sum(log(inta(fn)))
+}
+
+Location function:
+~a + b * dose + rand
+
+-Log likelihood    64.64958
+Degrees of freedom 16
+AIC                68.64958
+Iterations         10
+
+Location parameters:
+   estimate      se
+a    8.7119  4.4449
+b    0.2489  0.4466
+
+Shape parameters:
+      estimate      se
+p[1]     3.441  0.3542
+
+Mixing dispersion parameter:
+   estimate     se
+      2.259  1.197
+
+Correlations:
+         1        2        3        4
+1  1.00000 -0.89432 -0.04119  0.08966
+2 -0.89432  1.00000  0.04605 -0.09992
+3 -0.04119  0.04605  1.00000 -0.19689
+4  0.08966 -0.09992 -0.19689  1.00000
+> q("no")
+
+````
+Note -- there were no valgrind messages after gnlmix.  Looks like we cured it, because when CRAN posted the valgrind output it happened right after gnlmix example in v1.1.3.
